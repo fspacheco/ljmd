@@ -7,7 +7,7 @@
 
 #include <ljmd.h>
 #include <mdlib.h>
-
+//#include <omp.h>
 
 /* main */
 int main(int argc, char **argv)
@@ -19,6 +19,20 @@ int main(int argc, char **argv)
     double t_start;
 
     printf("LJMD version %3.1f\n", LJMD_VERSION);
+
+	int nthreads = 1;
+#ifdef _OPENMP
+    if (argc>2) {
+        omp_set_num_threads(atoi(argv[2]));
+    }
+#endif
+
+#ifdef _OPENMP
+#pragma omp parallel
+#pragma omp master
+    nthreads = omp_get_num_threads();
+	fprintf(stdout, "DBG: Using %d threads\n", nthreads);
+#endif
 
     t_start = wallclock();
 
