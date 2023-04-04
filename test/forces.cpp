@@ -34,7 +34,9 @@ TEST(forces2, force) {
     EXPECT_EQ(0.0, sys.fx[1]);
     EXPECT_EQ(0.0, sys.fy[0]);
     EXPECT_EQ(0.0, sys.fy[1]);
-    EXPECT_DOUBLE_EQ(-13.32787861802134, sys.fz[0]);
-    EXPECT_DOUBLE_EQ(13.32787861802134, sys.fz[1]);
+    EXPECT_NEAR(-13.32787861802134, sys.fz[0], 10e-10); // Optimization creates a small error in last digit.
+    EXPECT_NEAR(13.32787861802134, sys.fz[1], 10e-10);
+    //EXPECT_DOUBLE_EQ(-13.32787861802134, sys.fz[0]);
+    //EXPECT_DOUBLE_EQ(13.32787861802134, sys.fz[1]);
 }
 //test forces.c for the function force, which is used to compute the forces on each atom of a system of 3 atoms
