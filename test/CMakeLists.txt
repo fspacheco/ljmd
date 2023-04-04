@@ -23,3 +23,8 @@ add_test(NAME CheckCodeWithRef
 
 add_custom_target(run_check_ref COMMAND ${CMAKE_CTEST_COMMAND} --verbose -R CheckCodeWithRef)
 
+add_test(NAME CheckOpenMPCodeWithRef
+        COMMAND bash -c "cd ..;make check_openmp")
+
+add_custom_target(run_check_openmp_ref COMMAND ${CMAKE_CTEST_COMMAND} --verbose -R CheckCodeWithRef)
+

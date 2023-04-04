@@ -26,5 +26,15 @@ COMMAND cmp a.dat b.dat || exit 1
 COMMAND rm -f a.dat b.dat
 )
 
+# add check target
+add_custom_target(check_openmp
+COMMAND ../ljmd-openmp.x < argon_108.inp
+COMMAND head -10 argon_108.dat > a.dat
+COMMAND head -10 ../reference/argon_108.dat > b.dat
+COMMAND cmp a.dat b.dat || exit 1
+COMMAND rm -f a.dat b.dat
+)
+
 # add clean target
 add_custom_target(clean_example COMMAND rm -f *.xyz *.dat)
+

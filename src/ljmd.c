@@ -22,8 +22,8 @@ int main(int argc, char **argv)
 
 	int nthreads = 1;
 #ifdef _OPENMP
-    if (argc>2) {
-        omp_set_num_threads(atoi(argv[2]));
+    if (argc>1) {
+        omp_set_num_threads(atoi(argv[1]));
     }
 #endif
 
@@ -31,7 +31,7 @@ int main(int argc, char **argv)
 #pragma omp parallel
 #pragma omp master
     nthreads = omp_get_num_threads();
-	fprintf(stdout, "DBG: Using %d threads\n", nthreads);
+	fprintf(stdout, "DBG: main -> %d threads\n", nthreads);
 #endif
 
     t_start = wallclock();
