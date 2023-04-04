@@ -39,14 +39,14 @@ target_link_libraries(ljmd-serial.x mdlib)
 add_executable(ljmd-openmp.x src/ljmd.c)
 # compile options
 #target_compile_options(ljmd-openmp.x PRIVATE -fopenmp -Wall -g -O0 -DLJMD_VERSION=2.0)
-target_compile_options(ljmd-openmp.x PRIVATE -fopenmp -g -O0 -DLJMD_VERSION=2.0)
+target_compile_options(ljmd-openmp.x PRIVATE -fopenmp -O3 -DLJMD_VERSION=2.0)
 # include directory for header files
 include_directories(include)
 
 # add library for force computation
 add_library(mdlib-openmp src/utilities.c src/verlet_ti.c src/forces.c src/energies.c src/input.c src/output.c src/reading.c)
 #target_compile_options(mdlib-openmp PRIVATE -fopenmp -Wall -g -O0 -DLJMD_VERSION=2.0)
-target_compile_options(mdlib-openmp PRIVATE -fopenmp -g -O0 -DLJMD_VERSION=2.0)
+target_compile_options(mdlib-openmp PRIVATE -fopenmp -O3 -DLJMD_VERSION=2.0)
 target_link_libraries(mdlib-openmp m)
 
 # link libraries
