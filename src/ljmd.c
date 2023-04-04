@@ -7,7 +7,7 @@
 
 #include <ljmd.h>
 #include <mdlib.h>
-//#include <omp.h>
+#include <omp.h>
 
 /* main */
 int main(int argc, char **argv)

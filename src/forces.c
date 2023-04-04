@@ -33,7 +33,7 @@ void force(mdsys_t *sys)
     rcsq=sys->rcut*sys->rcut; //square of the cutoff radius
 
 	double epot_tmp = 0; // gcc does not make reduction directly on sys->epot
-#if defined(_OPENMP)
+#ifdef _OPENMP
 #pragma omp parallel for default(shared) private(i,j,rx,ry,rz,ffac) reduction(+:epot_tmp)
 #endif
     for(i=0; i < (sys->natoms); ++i) {
@@ -41,7 +41,6 @@ void force(mdsys_t *sys)
 
            // particles have no interactions with themselves
            // if (i==j) continue; //it will be useless, since j starts from i+1
-
             // get distance between particle i and j
             rx=pbc(sys->rx[i] - sys->rx[j], 0.5*sys->box);
             ry=pbc(sys->ry[i] - sys->ry[j], 0.5*sys->box);
