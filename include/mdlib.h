@@ -38,5 +38,8 @@ double wallclock();
 int get_a_line(FILE *fp, char *buf);
 // output function
 void output(mdsys_t *sys, FILE *erg, FILE *traj);
+// reading files
+int readinput (mdsys_t *sys, int * nprint, char restfile[BLEN], char trajfile[BLEN], char ergfile[BLEN]);
+int readrest (mdsys_t *sys, char restfile[BLEN]);
 
 #endif

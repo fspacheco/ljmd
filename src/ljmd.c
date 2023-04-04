@@ -12,12 +12,12 @@
 /* main */
 int main(int argc, char **argv)
 {
-    int nprint, i;
-    char restfile[BLEN], trajfile[BLEN], ergfile[BLEN], line[BLEN];
-    FILE *fp,*traj,*erg;
+    int nprint, return_value=0;
+    char restfile[BLEN], trajfile[BLEN], ergfile[BLEN];
+    FILE *traj,*erg;
     mdsys_t sys;
     double t_start;
-
+     
     printf("LJMD version %3.1f\n", LJMD_VERSION);
 
 	int nthreads = 1;
@@ -37,27 +37,14 @@ int main(int argc, char **argv)
     t_start = wallclock();
 
     /* read input file */
-    if(get_a_line(stdin,line)) return 1;
-    sys.natoms=atoi(line);
-    if(get_a_line(stdin,line)) return 1;
-    sys.mass=atof(line);
-    if(get_a_line(stdin,line)) return 1;
-    sys.epsilon=atof(line);
-    if(get_a_line(stdin,line)) return 1;
-    sys.sigma=atof(line);
-    if(get_a_line(stdin,line)) return 1;
-    sys.rcut=atof(line);
-    if(get_a_line(stdin,line)) return 1;
-    sys.box=atof(line);
-    if(get_a_line(stdin,restfile)) return 1;
-    if(get_a_line(stdin,trajfile)) return 1;
-    if(get_a_line(stdin,ergfile)) return 1;
-    if(get_a_line(stdin,line)) return 1;
-    sys.nsteps=atoi(line);
-    if(get_a_line(stdin,line)) return 1;
-    sys.dt=atof(line);
-    if(get_a_line(stdin,line)) return 1;
-    nprint=atoi(line);
+    return_value = readinput(&sys, &nprint, restfile, trajfile, ergfile);
+    if (return_value != 0) {
+        printf("Error reading input file\n");
+        return return_value;
+    }
+
+    // print nprint
+    printf("nprint = %d\n", nprint);
 
     /* allocate memory */
     sys.rx=(double *)malloc(sys.natoms*sizeof(double));
@@ -70,22 +57,11 @@ int main(int argc, char **argv)
     sys.fy=(double *)malloc(sys.natoms*sizeof(double));
     sys.fz=(double *)malloc(sys.natoms*sizeof(double));
 
-    /* read restart */
-    fp=fopen(restfile,"r");
-    if(fp) {
-        for (i=0; i<sys.natoms; ++i) {
-            fscanf(fp,"%lf%lf%lf",sys.rx+i, sys.ry+i, sys.rz+i);
-        }
-        for (i=0; i<sys.natoms; ++i) {
-            fscanf(fp,"%lf%lf%lf",sys.vx+i, sys.vy+i, sys.vz+i);
-        }
-        fclose(fp);
-        azzero(sys.fx, sys.natoms);
-        azzero(sys.fy, sys.natoms);
-        azzero(sys.fz, sys.natoms);
-    } else {
-        perror("cannot read restart file");
-        return 3;
+    /* read restfile */
+    return_value = readrest(&sys, restfile);
+    if (return_value != 0) {
+        printf("Error reading restart file\n");
+        return return_value;
     }
 
     /* initialize forces and energies.*/

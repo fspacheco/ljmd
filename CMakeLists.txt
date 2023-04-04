@@ -22,7 +22,7 @@ target_compile_options(ljmd-openmp.x PRIVATE  -Wall -g -O0 -DLJMD_VERSION=2.0)#3
 include_directories(include)
 
 # add library for force computation
-add_library(mdlib src/utilities.c src/verlet_ti.c src/forces.c src/energies.c src/input.c src/output.c)
+add_library(mdlib src/utilities.c src/verlet_ti.c src/forces.c src/energies.c src/input.c src/output.c src/reading.c)
 target_link_libraries(mdlib m)
 
 # link libraries
