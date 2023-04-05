@@ -1,0 +1,1 @@
+/usr/bin/cc -Wl,-Bsymbolic-functions CMakeFiles/ljmd.x.dir/src/ljmd-mpi.c.o -o ljmd.x  libmdlib-util.a libmdlib-mpi.a -lm /usr/lib/x86_64-linux-gnu/libmpichcxx.so /usr/lib/x86_64-linux-gnu/libmpich.so 

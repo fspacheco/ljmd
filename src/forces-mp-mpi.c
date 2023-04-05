@@ -59,33 +59,33 @@ void force(mdsys_t *sys)
         iend = istart + isize;
     }
 
+    #pragma omp parallel for private(j,rx,ry,rz,rsq,ffac) reduction(+:epot)
+        for(int i_mpi = istart; i_mpi < iend; ++i_mpi) {
 
-    for(int i_mpi = istart; i_mpi < iend; ++i_mpi) {
+            for(j=0; j < (sys->natoms); ++j) { 
+                
+                /* particles have no interactions with themselves */
+                if (i_mpi==j) continue; 
 
-        for(j=0; j < (sys->natoms); ++j) { 
-            
-            /* particles have no interactions with themselves */
-            if (i_mpi==j) continue; 
+                /* get distance between particle i and j */
+                rx=pbc(sys->rx[i_mpi] - sys->rx[j], 0.5*sys->box);
+                ry=pbc(sys->ry[i_mpi] - sys->ry[j], 0.5*sys->box);
+                rz=pbc(sys->rz[i_mpi] - sys->rz[j], 0.5*sys->box);
+                rsq = rx*rx + ry*ry + rz*rz; 
 
-            /* get distance between particle i and j */
-            rx=pbc(sys->rx[i_mpi] - sys->rx[j], 0.5*sys->box);
-            ry=pbc(sys->ry[i_mpi] - sys->ry[j], 0.5*sys->box);
-            rz=pbc(sys->rz[i_mpi] - sys->rz[j], 0.5*sys->box);
-            rsq = rx*rx + ry*ry + rz*rz; 
+                /* compute force and energy if within cutoff */
+            if (rsq < rcsq) {
+                    //remove the expensive pow() and division functions from the inner loop
+                    double rm6,rm2; rm2=1.0/rsq; rm6=rm2*rm2*rm2;
+                    ffac = (12.0*c12*rm6 - 6.0*c6)*rm6*rm2;
+                    epot += 0.5*rm6*(c12*rm6 - c6); 
 
-            /* compute force and energy if within cutoff */
-           if (rsq < rcsq) {
-                //remove the expensive pow() and division functions from the inner loop
-                double rm6,rm2; rm2=1.0/rsq; rm6=rm2*rm2*rm2;
-                ffac = (12.0*c12*rm6 - 6.0*c6)*rm6*rm2;
-                epot += 0.5*rm6*(c12*rm6 - c6); 
-
-                sys->fx_mpi[i_mpi] += rx*ffac;
-                sys->fy_mpi[i_mpi] += ry*ffac;
-                sys->fz_mpi[i_mpi] += rz*ffac;
+                    sys->fx_mpi[i_mpi] += rx*ffac;
+                    sys->fy_mpi[i_mpi] += ry*ffac;
+                    sys->fz_mpi[i_mpi] += rz*ffac;
+                }
             }
         }
-    }
 
     MPI_Reduce(sys->fx_mpi, sys->fx, sys->natoms, MPI_DOUBLE, MPI_SUM, 0, sys->mpicomm);
     MPI_Reduce(sys->fy_mpi, sys->fy, sys->natoms, MPI_DOUBLE, MPI_SUM, 0, sys->mpicomm);

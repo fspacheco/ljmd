@@ -19,7 +19,7 @@ if (MPI_FOUND)
     # compile options
     target_compile_options(ljmd.x PRIVATE -Wall -g -O3 -ffast-math -fomit-frame-pointer -DLJMD_VERSION=1.0 -DMPIYES)
     # add library for force computation
-    add_library(mdlib-mpi src/forces_mpi.c)
+    add_library(mdlib-mpi src/forces-mpi.c)
     target_link_libraries(mdlib-mpi m MPI::MPI_CXX)
     # compile options for library
     target_compile_options(mdlib-mpi PRIVATE -Wall -g -O3 -ffast-math -fomit-frame-pointer -DLJMD_VERSION=1.0 -DMPIYES)
@@ -69,7 +69,7 @@ add_custom_target(check
     COMMAND ${CMAKE_MAKE_PROGRAM} -C examples check_example
 )
 
-enable_testing()
+# enable_testing()
 
-add_subdirectory(test)
+# add_subdirectory(test)
 

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmdlib-mpi.a CMakeFiles/mdlib-mpi.dir/src/forces-mpi.c.o
+/usr/bin/ranlib libmdlib-mpi.a
