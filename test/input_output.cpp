@@ -72,7 +72,10 @@ TEST(Output, WriteToFile) {
 	ASSERT_DOUBLE_EQ(sys.ry[1], 21.3);
 	ASSERT_DOUBLE_EQ(sys.rz[1], 22.4);
 	fclose(fp_traj);
-
+    //free the allocated memory
+	delete [] sys.rx;
+	delete [] sys.ry;
+	delete [] sys.rz;
 	remove(erg_filename);
 	remove(traj_filename);
 }

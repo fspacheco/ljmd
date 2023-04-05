@@ -3,8 +3,6 @@ extern "C" { // since our lib is C code, but the test here is C++
 #include <mdlib.h>
 #include <mdlib-util.h>
 }
-
->>>>>>> 9dcf7986d1101c6d77365fc10243a0e61f8043f2
 //test forces.c for the function force, which is used to compute the forces on each atom of a system of 2 atoms
 TEST(forces2, force) {
     mdsys_t sys;
