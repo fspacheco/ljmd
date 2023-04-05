@@ -18,7 +18,7 @@ int main(int argc, char **argv)
     FILE *traj=NULL,*erg=NULL;
     mdsys_t sys;
     double t_start=0.0;
-
+    int nthreads = 1;
     
     /* initialize MPI communicator */
     MPI_Init(&argc, &argv);
@@ -29,18 +29,34 @@ int main(int argc, char **argv)
     printf("\n");
     printf("Rank %d of %d\n", sys.mpirank, sys.nsize);
 
-    // NB: kinda useless since this code runs only if MPICH is defined
-    #ifdef MPICH
-        printf("MPICH is defined\n");
-    #else
-        printf("MPICH is not defined\n");
+    
+
+    // set number of threads
+    #ifdef _OPENMP
+        if (argc>1) {
+            omp_set_num_threads(atoi(argv[1]));
+        }
     #endif
+    
 
     // Initialization operations for the master (input reading, print info, etc.)
     if (sys.mpirank == 0) {
 
         // print version
         printf("LJMD version %3.1f\n", LJMD_VERSION);
+
+        // NB: kinda useless since this code runs only if MPICH is defined
+        #ifdef MPICH
+            printf("MPICH is defined\n");
+        #else
+            printf("MPICH is not defined\n");
+        #endif
+        #ifdef _OPENMP
+        #pragma omp parallel
+        #pragma omp master
+            nthreads = omp_get_num_threads();
+            fprintf(stdout, "DBG: main -> %d threads\n", nthreads);
+        #endif
 
         // only master process keeps track of time
         t_start = wallclock();
