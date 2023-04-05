@@ -60,5 +60,9 @@ TEST(FirstVelVerlet, ComputeHalfTimeStep) {
 	EXPECT_NEAR(sys.vy[1], 11.7147272727, abs_err) 		<< "vy[1] is not correct";
 	EXPECT_NEAR(sys.vz[1], -13.1410909090, abs_err) 	<< "vz[1] is not correct";
 
+    /* free memory */
+    delete [] sys.rx; delete [] sys.ry; delete [] sys.rz;
+    delete [] sys.vx; delete [] sys.vy; delete [] sys.vz;
+    delete [] sys.fx; delete [] sys.fy; delete [] sys.fz;
 }
 
