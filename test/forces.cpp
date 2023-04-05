@@ -1,7 +1,10 @@
 #include <gtest/gtest.h>
 extern "C" { // since our lib is C code, but the test here is C++
 #include <mdlib.h>
+#include <mdlib-util.h>
 }
+
+>>>>>>> 9dcf7986d1101c6d77365fc10243a0e61f8043f2
 //test forces.c for the function force, which is used to compute the forces on each atom of a system of 2 atoms
 TEST(forces2, force) {
     mdsys_t sys;
@@ -34,7 +37,17 @@ TEST(forces2, force) {
     EXPECT_EQ(0.0, sys.fx[1]);
     EXPECT_EQ(0.0, sys.fy[0]);
     EXPECT_EQ(0.0, sys.fy[1]);
-    EXPECT_DOUBLE_EQ(-13.32787861802134, sys.fz[0]);
-    EXPECT_DOUBLE_EQ(13.32787861802134, sys.fz[1]);
+
+    EXPECT_NEAR(-13.32787861802134, sys.fz[0], 10e-10); // Optimization creates a small error in last digit.
+    EXPECT_NEAR(13.32787861802134, sys.fz[1], 10e-10);
+    //EXPECT_DOUBLE_EQ(-13.32787861802134, sys.fz[0]);
+    //EXPECT_DOUBLE_EQ(13.32787861802134, sys.fz[1]);
+    //free the allocated memory
+    delete [] sys.rx;
+    delete [] sys.ry;
+    delete [] sys.rz;
+    delete [] sys.fx;
+    delete [] sys.fy;
+    delete [] sys.fz;
 }
 //test forces.c for the function force, which is used to compute the forces on each atom of a system of 3 atoms

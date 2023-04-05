@@ -1,3 +1,5 @@
+
+#include <mdlib-util.h>
 #include <mdlib.h>
 #include <string.h>
 #include <ctype.h>

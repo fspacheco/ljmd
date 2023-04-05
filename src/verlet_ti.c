@@ -1,8 +1,10 @@
+#include <mdlib-util.h>
 #include <mdlib.h>
 
-
 /* first part: propagate velocities by half and positions by full step */
-static void velverlet_first_half(mdsys_t *sys)
+// NB: not static since we need to call it from the test
+void velverlet_first_half(mdsys_t *sys)
+
 {
     int i;
     for (i=0; i<sys->natoms; ++i) {
@@ -30,12 +32,25 @@ static void velverlet_second_half(mdsys_t *sys)
 
 /* velocity verlet */
 void velverlet(mdsys_t *sys)
-{
-    /* first part: propagate velocities by half and positions by full step */
-    velverlet_first_half(sys);
-    /* compute forces and potential energy */
-    force(sys);
-    /* second part: propagate velocities by another half step */
-    velverlet_second_half(sys);
+{   
+    #ifdef MPIYES
+        /* first part: propagate velocities by half and positions by full step */
+        if (sys->mpirank == 0) {
+            velverlet_first_half(sys);
+        }
+        /* compute forces and potential energy */
+        force(sys);
+        /* second part: propagate velocities by another half step */
+        if (sys->mpirank == 0) {
+            velverlet_second_half(sys);
+        }
+    #else
+        /* first part: propagate velocities by half and positions by full step */
+        velverlet_first_half(sys);
+        /* compute forces and potential energy */
+        force(sys);
+        /* second part: propagate velocities by another half step */
+        velverlet_second_half(sys);
+    #endif
 }
 

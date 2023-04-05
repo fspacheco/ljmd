@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 extern "C" { // since our lib is C code, but the test here is C++
+#include <mdlib-util.h>
 #include <mdlib.h>
 }
 
@@ -13,6 +14,8 @@ TEST(Utilities, AzzeroArray) {
 	ASSERT_DOUBLE_EQ(arr[0], 0.0);
 	ASSERT_DOUBLE_EQ(arr[1], 0.0);
 	ASSERT_DOUBLE_EQ(arr[2], 0.0);
+	//free the allocated memory
+	delete [] arr;
 }
 
 TEST(Utilities, WallClock) {

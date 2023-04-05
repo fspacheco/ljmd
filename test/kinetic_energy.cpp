@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 extern "C" { // since our lib is C code, but the test here is C++
+#include <mdlib-util.h>
 #include <mdlib.h>
 }
 
@@ -18,5 +19,9 @@ TEST(KineticEnergy, ComputeKE) {
 	sys.vz[1] = 20.7;
 	ekin(&sys);
 	ASSERT_DOUBLE_EQ(sys.ekin, 38327260.75777286);
+	//free the allocated memory
+	delete [] sys.vx;
+	delete [] sys.vy;
+	delete [] sys.vz;
 }
 

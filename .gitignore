@@ -34,3 +34,6 @@ cbuild.sh
 *.exe
 *.out
 *.app
+
+# Local tests
+local_test/
