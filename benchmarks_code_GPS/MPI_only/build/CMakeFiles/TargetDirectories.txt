@@ -1,9 +1,0 @@
-/home/mgisonni/group_project/MPI_only/build/CMakeFiles/rebuild_cache.dir
-/home/mgisonni/group_project/MPI_only/build/CMakeFiles/edit_cache.dir
-/home/mgisonni/group_project/MPI_only/build/CMakeFiles/mdlib-util.dir
-/home/mgisonni/group_project/MPI_only/build/CMakeFiles/mdlib-mpi.dir
-/home/mgisonni/group_project/MPI_only/build/CMakeFiles/ljmd.x.dir
-/home/mgisonni/group_project/MPI_only/build/examples/CMakeFiles/rebuild_cache.dir
-/home/mgisonni/group_project/MPI_only/build/examples/CMakeFiles/edit_cache.dir
-/home/mgisonni/group_project/MPI_only/build/examples/CMakeFiles/clean_example.dir
-/home/mgisonni/group_project/MPI_only/build/examples/CMakeFiles/check_example.dir

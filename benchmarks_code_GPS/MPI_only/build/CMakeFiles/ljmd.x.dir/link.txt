@@ -1,1 +1,0 @@
-/opt/rh/devtoolset-6/root/usr/bin/cc   -Wl,-rpath -Wl,/opt/sissa/sissa-intel1803-openmpi-2.1.3/root/lib -Wl,--enable-new-dtags -pthread CMakeFiles/ljmd.x.dir/src/ljmd-mpi.c.o  -o ljmd.x libmdlib-util.a libmdlib-mpi.a -lm /opt2/sissa/sissa-intel1803-openmpi-2.1.3/root/lib/libmpi.so 

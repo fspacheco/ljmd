@@ -1,2 +1,0 @@
-/usr/bin/ar qc libmdlib-util.a CMakeFiles/mdlib-util.dir/src/utilities.c.o CMakeFiles/mdlib-util.dir/src/verlet_ti.c.o CMakeFiles/mdlib-util.dir/src/energies.c.o CMakeFiles/mdlib-util.dir/src/input.c.o CMakeFiles/mdlib-util.dir/src/output.c.o CMakeFiles/mdlib-util.dir/src/reading.c.o
-/usr/bin/ranlib libmdlib-util.a
