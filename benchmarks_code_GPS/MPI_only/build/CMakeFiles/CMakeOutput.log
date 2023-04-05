@@ -1,0 +1,249 @@
+The system is: Linux - 3.10.0-1062.el7.x86_64 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /opt/rh/devtoolset-6/root/usr/bin/cc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/mgisonni/group_project/MPI_only/build/CMakeFiles/3.15.4/CompilerIdC/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/mgisonni/group_project/MPI_only/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/opt/rh/devtoolset-6/root/usr/bin/gmake cmTC_00e11/fast && /opt/rh/devtoolset-6/root/usr/bin/gmake -f CMakeFiles/cmTC_00e11.dir/build.make CMakeFiles/cmTC_00e11.dir/build
+gmake[1]: Entering directory '/home/mgisonni/group_project/MPI_only/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_00e11.dir/testCCompiler.c.o
+/opt/rh/devtoolset-6/root/usr/bin/cc    -o CMakeFiles/cmTC_00e11.dir/testCCompiler.c.o   -c /home/mgisonni/group_project/MPI_only/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_00e11
+/opt2/ohpc/pub/utils/cmake/3.15.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_00e11.dir/link.txt --verbose=1
+/opt/rh/devtoolset-6/root/usr/bin/cc      CMakeFiles/cmTC_00e11.dir/testCCompiler.c.o  -o cmTC_00e11 
+gmake[1]: Leaving directory '/home/mgisonni/group_project/MPI_only/build/CMakeFiles/CMakeTmp'
+
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/mgisonni/group_project/MPI_only/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/opt/rh/devtoolset-6/root/usr/bin/gmake cmTC_324cd/fast && /opt/rh/devtoolset-6/root/usr/bin/gmake -f CMakeFiles/cmTC_324cd.dir/build.make CMakeFiles/cmTC_324cd.dir/build
+gmake[1]: Entering directory '/home/mgisonni/group_project/MPI_only/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_324cd.dir/CMakeCCompilerABI.c.o
+/opt/rh/devtoolset-6/root/usr/bin/cc   -v -o CMakeFiles/cmTC_324cd.dir/CMakeCCompilerABI.c.o   -c /opt2/ohpc/pub/utils/cmake/3.15.4/share/cmake-3.15/Modules/CMakeCCompilerABI.c
+Using built-in specs.
+COLLECT_GCC=/opt/rh/devtoolset-6/root/usr/bin/cc
+Target: x86_64-redhat-linux
+Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,fortran,lto --prefix=/opt/rh/devtoolset-6/root/usr --mandir=/opt/rh/devtoolset-6/root/usr/share/man --infodir=/opt/rh/devtoolset-6/root/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --enable-plugin --with-linker-hash-style=gnu --enable-initfini-array --disable-libgcj --with-default-libstdcxx-abi=gcc4-compatible --with-isl=/builddir/build/BUILD/gcc-6.3.1-20170216/obj-x86_64-redhat-linux/isl-install --enable-libmpx --enable-gnu-indirect-function --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux
+Thread model: posix
+gcc version 6.3.1 20170216 (Red Hat 6.3.1-3) (GCC) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_324cd.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ /opt2/rh/devtoolset-6/root/usr/bin/../libexec/gcc/x86_64-redhat-linux/6.3.1/cc1 -quiet -v -iprefix /opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/ /opt2/ohpc/pub/utils/cmake/3.15.4/share/cmake-3.15/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_324cd.dir/CMakeCCompilerABI.c.o -version -o /tmp/cc9vjFau.s
+GNU C11 (GCC) version 6.3.1 20170216 (Red Hat 6.3.1-3) (x86_64-redhat-linux)
+	compiled by GNU C version 6.3.1 20170216 (Red Hat 6.3.1-3), GMP version 6.0.0, MPFR version 3.1.1, MPC version 1.0.1, isl version 0.14 or 0.13
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/include-fixed"
+ignoring nonexistent directory "/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/../../../../x86_64-redhat-linux/include"
+ignoring duplicate directory "/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/../../lib/gcc/x86_64-redhat-linux/6.3.1/include"
+ignoring nonexistent directory "/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/../../lib/gcc/x86_64-redhat-linux/6.3.1/include-fixed"
+ignoring nonexistent directory "/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/../../lib/gcc/x86_64-redhat-linux/6.3.1/../../../../x86_64-redhat-linux/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /opt/sissa/sissa-intel1803-openmpi-2.1.3/root/include
+ /opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/ipp/include
+ /opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/mkl/include
+ /opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/pstl/include
+ /opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/tbb/include
+ /opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/daal/include
+ /opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/include
+ /usr/local/include
+ /opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/../../include
+ /usr/include
+End of search list.
+GNU C11 (GCC) version 6.3.1 20170216 (Red Hat 6.3.1-3) (x86_64-redhat-linux)
+	compiled by GNU C version 6.3.1 20170216 (Red Hat 6.3.1-3), GMP version 6.0.0, MPFR version 3.1.1, MPC version 1.0.1, isl version 0.14 or 0.13
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 18ac54e10fc1f4b39548d3adfa3b2617
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_324cd.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ /opt2/rh/devtoolset-6/root/usr/bin/../libexec/gcc/x86_64-redhat-linux/6.3.1/as -v --64 -o CMakeFiles/cmTC_324cd.dir/CMakeCCompilerABI.c.o /tmp/cc9vjFau.s
+GNU assembler version 2.27 (x86_64-redhat-linux) using BFD version version 2.27-12.el7.1
+COMPILER_PATH=/opt2/rh/devtoolset-6/root/usr/bin/../libexec/gcc/x86_64-redhat-linux/6.3.1/:/opt2/rh/devtoolset-6/root/usr/bin/../libexec/gcc/
+LIBRARY_PATH=/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/:/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/:/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/opt/sissa/sissa-intel1803-openmpi-2.1.3/root/lib/:/opt/sissa/sissa-intel1803-openmpi-2.1.3/root/lib/openmpi/:/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/ipp/lib/intel64/:/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin/:/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin/:/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7/:/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/daal/lib/intel64_lin/:/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64_lin/gcc4.4/:/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_324cd.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+Linking C executable cmTC_324cd
+/opt2/ohpc/pub/utils/cmake/3.15.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_324cd.dir/link.txt --verbose=1
+/opt/rh/devtoolset-6/root/usr/bin/cc     -v CMakeFiles/cmTC_324cd.dir/CMakeCCompilerABI.c.o  -o cmTC_324cd 
+Using built-in specs.
+COLLECT_GCC=/opt/rh/devtoolset-6/root/usr/bin/cc
+COLLECT_LTO_WRAPPER=/opt2/rh/devtoolset-6/root/usr/bin/../libexec/gcc/x86_64-redhat-linux/6.3.1/lto-wrapper
+Target: x86_64-redhat-linux
+Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,fortran,lto --prefix=/opt/rh/devtoolset-6/root/usr --mandir=/opt/rh/devtoolset-6/root/usr/share/man --infodir=/opt/rh/devtoolset-6/root/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --enable-plugin --with-linker-hash-style=gnu --enable-initfini-array --disable-libgcj --with-default-libstdcxx-abi=gcc4-compatible --with-isl=/builddir/build/BUILD/gcc-6.3.1-20170216/obj-x86_64-redhat-linux/isl-install --enable-libmpx --enable-gnu-indirect-function --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux
+Thread model: posix
+gcc version 6.3.1 20170216 (Red Hat 6.3.1-3) (GCC) 
+COMPILER_PATH=/opt2/rh/devtoolset-6/root/usr/bin/../libexec/gcc/x86_64-redhat-linux/6.3.1/:/opt2/rh/devtoolset-6/root/usr/bin/../libexec/gcc/
+LIBRARY_PATH=/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/:/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/:/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/opt/sissa/sissa-intel1803-openmpi-2.1.3/root/lib/:/opt/sissa/sissa-intel1803-openmpi-2.1.3/root/lib/openmpi/:/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/ipp/lib/intel64/:/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin/:/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin/:/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7/:/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/daal/lib/intel64_lin/:/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64_lin/gcc4.4/:/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_324cd' '-mtune=generic' '-march=x86-64'
+ /opt2/rh/devtoolset-6/root/usr/bin/../libexec/gcc/x86_64-redhat-linux/6.3.1/collect2 -plugin /opt2/rh/devtoolset-6/root/usr/bin/../libexec/gcc/x86_64-redhat-linux/6.3.1/liblto_plugin.so -plugin-opt=/opt2/rh/devtoolset-6/root/usr/bin/../libexec/gcc/x86_64-redhat-linux/6.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccMq9yaY.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_324cd /lib/../lib64/crt1.o /lib/../lib64/crti.o /opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/crtbegin.o -L/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1 -L/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc -L/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/opt/sissa/sissa-intel1803-openmpi-2.1.3/root/lib -L/opt/sissa/sissa-intel1803-openmpi-2.1.3/root/lib/openmpi -L/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/ipp/lib/intel64 -L/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin -L/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin -L/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7 -L/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/daal/lib/intel64_lin -L/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64_lin/gcc4.4 -L/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/../../.. CMakeFiles/cmTC_324cd.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/crtend.o /lib/../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_324cd' '-mtune=generic' '-march=x86-64'
+gmake[1]: Leaving directory '/home/mgisonni/group_project/MPI_only/build/CMakeFiles/CMakeTmp'
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/opt/sissa/sissa-intel1803-openmpi-2.1.3/root/include]
+    add: [/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/ipp/include]
+    add: [/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/mkl/include]
+    add: [/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/pstl/include]
+    add: [/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/tbb/include]
+    add: [/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/daal/include]
+    add: [/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/include]
+    add: [/usr/local/include]
+    add: [/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/../../include]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/opt/sissa/sissa-intel1803-openmpi-2.1.3/root/include] ==> [/opt/sissa/sissa-intel1803-openmpi-2.1.3/root/include]
+  collapse include dir [/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/ipp/include] ==> [/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/ipp/include]
+  collapse include dir [/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/mkl/include] ==> [/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/mkl/include]
+  collapse include dir [/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/pstl/include] ==> [/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/pstl/include]
+  collapse include dir [/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/tbb/include] ==> [/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/tbb/include]
+  collapse include dir [/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/daal/include] ==> [/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/daal/include]
+  collapse include dir [/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/include] ==> [/opt2/rh/devtoolset-6/root/usr/lib/gcc/x86_64-redhat-linux/6.3.1/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/../../include] ==> [/opt2/rh/devtoolset-6/root/usr/include]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/opt/sissa/sissa-intel1803-openmpi-2.1.3/root/include;/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/ipp/include;/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/mkl/include;/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/pstl/include;/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/tbb/include;/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/daal/include;/opt2/rh/devtoolset-6/root/usr/lib/gcc/x86_64-redhat-linux/6.3.1/include;/usr/local/include;/opt2/rh/devtoolset-6/root/usr/include;/usr/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/mgisonni/group_project/MPI_only/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/opt/rh/devtoolset-6/root/usr/bin/gmake cmTC_324cd/fast && /opt/rh/devtoolset-6/root/usr/bin/gmake -f CMakeFiles/cmTC_324cd.dir/build.make CMakeFiles/cmTC_324cd.dir/build]
+  ignore line: [gmake[1]: Entering directory '/home/mgisonni/group_project/MPI_only/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_324cd.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/opt/rh/devtoolset-6/root/usr/bin/cc   -v -o CMakeFiles/cmTC_324cd.dir/CMakeCCompilerABI.c.o   -c /opt2/ohpc/pub/utils/cmake/3.15.4/share/cmake-3.15/Modules/CMakeCCompilerABI.c]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/opt/rh/devtoolset-6/root/usr/bin/cc]
+  ignore line: [Target: x86_64-redhat-linux]
+  ignore line: [Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,fortran,lto --prefix=/opt/rh/devtoolset-6/root/usr --mandir=/opt/rh/devtoolset-6/root/usr/share/man --infodir=/opt/rh/devtoolset-6/root/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --enable-plugin --with-linker-hash-style=gnu --enable-initfini-array --disable-libgcj --with-default-libstdcxx-abi=gcc4-compatible --with-isl=/builddir/build/BUILD/gcc-6.3.1-20170216/obj-x86_64-redhat-linux/isl-install --enable-libmpx --enable-gnu-indirect-function --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 6.3.1 20170216 (Red Hat 6.3.1-3) (GCC) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_324cd.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /opt2/rh/devtoolset-6/root/usr/bin/../libexec/gcc/x86_64-redhat-linux/6.3.1/cc1 -quiet -v -iprefix /opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/ /opt2/ohpc/pub/utils/cmake/3.15.4/share/cmake-3.15/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_324cd.dir/CMakeCCompilerABI.c.o -version -o /tmp/cc9vjFau.s]
+  ignore line: [GNU C11 (GCC) version 6.3.1 20170216 (Red Hat 6.3.1-3) (x86_64-redhat-linux)]
+  ignore line: [	compiled by GNU C version 6.3.1 20170216 (Red Hat 6.3.1-3), GMP version 6.0.0, MPFR version 3.1.1, MPC version 1.0.1, isl version 0.14 or 0.13]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/include-fixed"]
+  ignore line: [ignoring nonexistent directory "/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/../../../../x86_64-redhat-linux/include"]
+  ignore line: [ignoring duplicate directory "/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/../../lib/gcc/x86_64-redhat-linux/6.3.1/include"]
+  ignore line: [ignoring nonexistent directory "/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/../../lib/gcc/x86_64-redhat-linux/6.3.1/include-fixed"]
+  ignore line: [ignoring nonexistent directory "/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/../../lib/gcc/x86_64-redhat-linux/6.3.1/../../../../x86_64-redhat-linux/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /opt/sissa/sissa-intel1803-openmpi-2.1.3/root/include]
+  ignore line: [ /opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/ipp/include]
+  ignore line: [ /opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/mkl/include]
+  ignore line: [ /opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/pstl/include]
+  ignore line: [ /opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/tbb/include]
+  ignore line: [ /opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/daal/include]
+  ignore line: [ /opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/../../include]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C11 (GCC) version 6.3.1 20170216 (Red Hat 6.3.1-3) (x86_64-redhat-linux)]
+  ignore line: [	compiled by GNU C version 6.3.1 20170216 (Red Hat 6.3.1-3), GMP version 6.0.0, MPFR version 3.1.1, MPC version 1.0.1, isl version 0.14 or 0.13]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: 18ac54e10fc1f4b39548d3adfa3b2617]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_324cd.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /opt2/rh/devtoolset-6/root/usr/bin/../libexec/gcc/x86_64-redhat-linux/6.3.1/as -v --64 -o CMakeFiles/cmTC_324cd.dir/CMakeCCompilerABI.c.o /tmp/cc9vjFau.s]
+  ignore line: [GNU assembler version 2.27 (x86_64-redhat-linux) using BFD version version 2.27-12.el7.1]
+  ignore line: [COMPILER_PATH=/opt2/rh/devtoolset-6/root/usr/bin/../libexec/gcc/x86_64-redhat-linux/6.3.1/:/opt2/rh/devtoolset-6/root/usr/bin/../libexec/gcc/]
+  ignore line: [LIBRARY_PATH=/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/:/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/:/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/opt/sissa/sissa-intel1803-openmpi-2.1.3/root/lib/:/opt/sissa/sissa-intel1803-openmpi-2.1.3/root/lib/openmpi/:/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/ipp/lib/intel64/:/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin/:/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin/:/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7/:/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/daal/lib/intel64_lin/:/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64_lin/gcc4.4/:/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_324cd.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [Linking C executable cmTC_324cd]
+  ignore line: [/opt2/ohpc/pub/utils/cmake/3.15.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_324cd.dir/link.txt --verbose=1]
+  ignore line: [/opt/rh/devtoolset-6/root/usr/bin/cc     -v CMakeFiles/cmTC_324cd.dir/CMakeCCompilerABI.c.o  -o cmTC_324cd ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/opt/rh/devtoolset-6/root/usr/bin/cc]
+  ignore line: [COLLECT_LTO_WRAPPER=/opt2/rh/devtoolset-6/root/usr/bin/../libexec/gcc/x86_64-redhat-linux/6.3.1/lto-wrapper]
+  ignore line: [Target: x86_64-redhat-linux]
+  ignore line: [Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,fortran,lto --prefix=/opt/rh/devtoolset-6/root/usr --mandir=/opt/rh/devtoolset-6/root/usr/share/man --infodir=/opt/rh/devtoolset-6/root/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --enable-plugin --with-linker-hash-style=gnu --enable-initfini-array --disable-libgcj --with-default-libstdcxx-abi=gcc4-compatible --with-isl=/builddir/build/BUILD/gcc-6.3.1-20170216/obj-x86_64-redhat-linux/isl-install --enable-libmpx --enable-gnu-indirect-function --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 6.3.1 20170216 (Red Hat 6.3.1-3) (GCC) ]
+  ignore line: [COMPILER_PATH=/opt2/rh/devtoolset-6/root/usr/bin/../libexec/gcc/x86_64-redhat-linux/6.3.1/:/opt2/rh/devtoolset-6/root/usr/bin/../libexec/gcc/]
+  ignore line: [LIBRARY_PATH=/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/:/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/:/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/opt/sissa/sissa-intel1803-openmpi-2.1.3/root/lib/:/opt/sissa/sissa-intel1803-openmpi-2.1.3/root/lib/openmpi/:/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/ipp/lib/intel64/:/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin/:/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin/:/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7/:/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/daal/lib/intel64_lin/:/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64_lin/gcc4.4/:/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_324cd' '-mtune=generic' '-march=x86-64']
+  link line: [ /opt2/rh/devtoolset-6/root/usr/bin/../libexec/gcc/x86_64-redhat-linux/6.3.1/collect2 -plugin /opt2/rh/devtoolset-6/root/usr/bin/../libexec/gcc/x86_64-redhat-linux/6.3.1/liblto_plugin.so -plugin-opt=/opt2/rh/devtoolset-6/root/usr/bin/../libexec/gcc/x86_64-redhat-linux/6.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccMq9yaY.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_324cd /lib/../lib64/crt1.o /lib/../lib64/crti.o /opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/crtbegin.o -L/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1 -L/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc -L/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/opt/sissa/sissa-intel1803-openmpi-2.1.3/root/lib -L/opt/sissa/sissa-intel1803-openmpi-2.1.3/root/lib/openmpi -L/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/ipp/lib/intel64 -L/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin -L/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin -L/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7 -L/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/daal/lib/intel64_lin -L/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64_lin/gcc4.4 -L/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/../../.. CMakeFiles/cmTC_324cd.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/crtend.o /lib/../lib64/crtn.o]
+    arg [/opt2/rh/devtoolset-6/root/usr/bin/../libexec/gcc/x86_64-redhat-linux/6.3.1/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/opt2/rh/devtoolset-6/root/usr/bin/../libexec/gcc/x86_64-redhat-linux/6.3.1/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/opt2/rh/devtoolset-6/root/usr/bin/../libexec/gcc/x86_64-redhat-linux/6.3.1/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccMq9yaY.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--no-add-needed] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_324cd] ==> ignore
+    arg [/lib/../lib64/crt1.o] ==> ignore
+    arg [/lib/../lib64/crti.o] ==> ignore
+    arg [/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/crtbegin.o] ==> ignore
+    arg [-L/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1] ==> dir [/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1]
+    arg [-L/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc] ==> dir [/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc]
+    arg [-L/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/../../../../lib64] ==> dir [/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/opt/sissa/sissa-intel1803-openmpi-2.1.3/root/lib] ==> dir [/opt/sissa/sissa-intel1803-openmpi-2.1.3/root/lib]
+    arg [-L/opt/sissa/sissa-intel1803-openmpi-2.1.3/root/lib/openmpi] ==> dir [/opt/sissa/sissa-intel1803-openmpi-2.1.3/root/lib/openmpi]
+    arg [-L/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/ipp/lib/intel64] ==> dir [/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/ipp/lib/intel64]
+    arg [-L/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin] ==> dir [/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin]
+    arg [-L/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin] ==> dir [/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin]
+    arg [-L/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7] ==> dir [/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7]
+    arg [-L/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/daal/lib/intel64_lin] ==> dir [/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/daal/lib/intel64_lin]
+    arg [-L/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64_lin/gcc4.4] ==> dir [/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64_lin/gcc4.4]
+    arg [-L/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/../../..] ==> dir [/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/../../..]
+    arg [CMakeFiles/cmTC_324cd.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/crtend.o] ==> ignore
+    arg [/lib/../lib64/crtn.o] ==> ignore
+  collapse library dir [/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1] ==> [/opt2/rh/devtoolset-6/root/usr/lib/gcc/x86_64-redhat-linux/6.3.1]
+  collapse library dir [/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc] ==> [/opt2/rh/devtoolset-6/root/usr/lib/gcc]
+  collapse library dir [/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/../../../../lib64] ==> [/opt2/rh/devtoolset-6/root/usr/lib64]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/opt/sissa/sissa-intel1803-openmpi-2.1.3/root/lib] ==> [/opt/sissa/sissa-intel1803-openmpi-2.1.3/root/lib]
+  collapse library dir [/opt/sissa/sissa-intel1803-openmpi-2.1.3/root/lib/openmpi] ==> [/opt/sissa/sissa-intel1803-openmpi-2.1.3/root/lib/openmpi]
+  collapse library dir [/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/ipp/lib/intel64] ==> [/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/ipp/lib/intel64]
+  collapse library dir [/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin] ==> [/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin]
+  collapse library dir [/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin] ==> [/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin]
+  collapse library dir [/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7] ==> [/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7]
+  collapse library dir [/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/daal/lib/intel64_lin] ==> [/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/daal/lib/intel64_lin]
+  collapse library dir [/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64_lin/gcc4.4] ==> [/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64_lin/gcc4.4]
+  collapse library dir [/opt2/rh/devtoolset-6/root/usr/bin/../lib/gcc/x86_64-redhat-linux/6.3.1/../../..] ==> [/opt2/rh/devtoolset-6/root/usr/lib]
+  implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+  implicit dirs: [/opt2/rh/devtoolset-6/root/usr/lib/gcc/x86_64-redhat-linux/6.3.1;/opt2/rh/devtoolset-6/root/usr/lib/gcc;/opt2/rh/devtoolset-6/root/usr/lib64;/lib64;/usr/lib64;/opt/sissa/sissa-intel1803-openmpi-2.1.3/root/lib;/opt/sissa/sissa-intel1803-openmpi-2.1.3/root/lib/openmpi;/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/ipp/lib/intel64;/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin;/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin;/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7;/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/daal/lib/intel64_lin;/opt/sissa/sissa-intel1803/root/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64_lin/gcc4.4;/opt2/rh/devtoolset-6/root/usr/lib]
+  implicit fwks: []
+
+
