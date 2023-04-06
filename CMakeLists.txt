@@ -29,7 +29,7 @@ if (MPI_FOUND)
     # compile options for library
     target_compile_options(mdlib-mpi PRIVATE -Wall -g -O3 -fopenmp -ffast-math -fomit-frame-pointer -DLJMD_VERSION=1.0 -DMPIYES)
 # add common library to serial and parallel version
-add_library(mdlib-util src/utilities.c src/verlet_ti.c src/energies.c src/input.c src/output.c src/reading.c)
+add_library(mdlib-util src/utilities.c src/verlet_ti.c src/energies.c src/input.c src/output.c src/reading.c src/mpi-bounds.c)
 # compile options for library
 target_link_libraries(mdlib-util m MPI::MPI_CXX)
 target_compile_options(mdlib-util PRIVATE -Wall -g -O3 -ffast-math -fomit-frame-pointer -DLJMD_VERSION=1.0 -DMPIYES)

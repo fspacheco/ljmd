@@ -24,6 +24,7 @@ static const double mvsq2e=2390.05736153349; /* m*v^2 in kcal/mol */
 void ekin(mdsys_t *sys);
 // velocity verlet
 void velverlet(mdsys_t *sys);
+void velverlet_mp(mdsys_t *sys, double *omp_forces);
 void velverlet_first_half(mdsys_t *sys);
 // set vector elements to zero
 void azzero(double *d, const int n);

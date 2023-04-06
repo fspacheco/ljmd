@@ -1,6 +1,7 @@
 # build directory
 build/
 cbuild.sh
+benchmarks_code_GPS/
 
 # Prerequisites
 *.d
