@@ -4,7 +4,7 @@ extern "C" { // since our lib is C code, but the test here is C++
 #include <mdlib-util.h>
 }
 //test forces.c for the function force, which is used to compute the forces on each atom of a system of 2 atoms
-TEST(forces2, force) {
+TEST(forces2, force_serial) {
     mdsys_t sys;
     sys.natoms = 2;
     sys.rx = new double[2];
