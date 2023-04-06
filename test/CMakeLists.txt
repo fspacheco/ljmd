@@ -8,8 +8,8 @@ set(BUILD_GMOCK OFF CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(gtest)
 
 add_executable(unit_tests kinetic_energy.cpp first_velverlet.cpp utilities.cpp forces.cpp input_output.cpp)
-
-target_link_libraries(unit_tests PRIVATE mdlib gtest_main)
+target_link_options(unit_tests PRIVATE -fopenmp)
+target_link_libraries(unit_tests PRIVATE mdlib-util mdlib-mpi gtest_main)
 
 # automatic discovery of unit tests
 include(GoogleTest)

@@ -38,8 +38,6 @@ TEST(forces2, force) {
 
     EXPECT_NEAR(-13.32787861802134, sys.fz[0], 10e-10); // Optimization creates a small error in last digit.
     EXPECT_NEAR(13.32787861802134, sys.fz[1], 10e-10);
-    //EXPECT_DOUBLE_EQ(-13.32787861802134, sys.fz[0]);
-    //EXPECT_DOUBLE_EQ(13.32787861802134, sys.fz[1]);
     //free the allocated memory
     delete [] sys.rx;
     delete [] sys.ry;

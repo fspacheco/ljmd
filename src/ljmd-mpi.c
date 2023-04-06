@@ -2,12 +2,13 @@
  * simple lennard-jones potential MD code with velocity verlet.
  * units: Length=Angstrom, Mass=amu; Energy=kcal
  *
- * baseline c version.
+ * MPI + OpenMP version
  */
 
 #include <ljmd.h>
 #include <mdlib-util.h>
 #include <mdlib.h>
+#include <omp.h>
 
 
 /* main */
@@ -32,7 +33,7 @@ int main(int argc, char **argv)
     
 
     // set number of threads
-    #ifdef _OPENMP
+    #if defined(_OPENMP)
         if (argc>1) {
             omp_set_num_threads(atoi(argv[1]));
         }
@@ -51,7 +52,7 @@ int main(int argc, char **argv)
         #else
             printf("MPICH is not defined\n");
         #endif
-        #ifdef _OPENMP
+        #if defined(_OPENMP)
         #pragma omp parallel
         #pragma omp master
             nthreads = omp_get_num_threads();

@@ -1,6 +1,6 @@
 # CMake build for P2.1 code
 cmake_minimum_required(VERSION 3.10)
-project(ljmd VERSION 1.0 LANGUAGES C CXX) 
+project(ljmd VERSION 3.0 LANGUAGES C CXX) 
 set(CMAKE_BUILD_TYPE RelWithDebInfo Release) 
 
 find_package(OpenMP REQUIRED)#COMPONENTS CXX QUIET)
@@ -22,17 +22,17 @@ if (MPI_FOUND)
     # Add executable 
     add_executable(ljmd.x src/ljmd-mpi.c)
     # compile options
-    target_compile_options(ljmd.x PRIVATE -Wall -g -O3 -fopenmp -ffast-math -fomit-frame-pointer -DLJMD_VERSION=1.0 -DMPIYES)
+    target_compile_options(ljmd.x PRIVATE -Wall -g -O3 -fopenmp -ffast-math -fomit-frame-pointer -DLJMD_VERSION=3.0 -DMPIYES)
     # add library for force computation
     add_library(mdlib-mpi src/forces-mp-mpi.c)
     target_link_libraries(mdlib-mpi m MPI::MPI_CXX)
     # compile options for library
-    target_compile_options(mdlib-mpi PRIVATE -Wall -g -O3 -fopenmp -ffast-math -fomit-frame-pointer -DLJMD_VERSION=1.0 -DMPIYES)
+    target_compile_options(mdlib-mpi PRIVATE -Wall -g -O3 -fopenmp -ffast-math -fomit-frame-pointer -DLJMD_VERSION=3.0 -DMPIYES)
 # add common library to serial and parallel version
 add_library(mdlib-util src/utilities.c src/verlet_ti.c src/energies.c src/input.c src/output.c src/reading.c)
 # compile options for library
 target_link_libraries(mdlib-util m MPI::MPI_CXX)
-target_compile_options(mdlib-util PRIVATE -Wall -g -O3 -ffast-math -fomit-frame-pointer -DLJMD_VERSION=1.0 -DMPIYES)
+target_compile_options(mdlib-util PRIVATE -Wall -g -O3 -ffast-math -fomit-frame-pointer -DLJMD_VERSION=3.0 -DMPIYES)
     # link libraries to executable
     target_link_options(ljmd.x PRIVATE -fopenmp)
     target_link_libraries(ljmd.x mdlib-util mdlib-mpi)
@@ -76,9 +76,9 @@ add_custom_target(check
     COMMAND ${CMAKE_MAKE_PROGRAM} -C examples check_example
 )
 
-# enable_testing()
+enable_testing()
 
-# add_subdirectory(test)
+add_subdirectory(test)
 
 
 # if (MPI_FOUND)
