@@ -62,11 +62,11 @@ Allocated 10 cpus
 
 | Num threads     | Time (s) 108atoms | 2916atoms |
 | --------------- | ----------------- | --------- |
-|20               | 0.129             | 9.595
-|10               | 0.062             | 11.936
-|5                | 0.083             | 18.094
-|2                | 0.155             | 32.965
-|1                | 0.194             | 42.235
+| 20              | 0.129             | 9.595     |
+| 10              | 0.062             | 11.936    |
+| 5               | 0.083             | 18.094    |
+| 2               | 0.155             | 32.965    |
+| 1               | 0.194             | 42.235    |
 
 ### commit c3cba54507dec408ff548cd6ff2f2235a935b164 (OpenMP version compiled with -O3) (reduction/critical)
 
@@ -90,7 +90,7 @@ File omp_md.o9147913
 
 | Num threads     | Time (s) 108atoms | 2916atoms |
 | --------------- | ----------------- | --------- |
-| 1               | 0.137             | 43.643
+| 1               | 0.137             | 43.643    |
 
 ### The serial version from the same commit, but compiled with -O0
 
