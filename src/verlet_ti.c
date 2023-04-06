@@ -4,7 +4,6 @@
 /* first part: propagate velocities by half and positions by full step */
 // NB: not static since we need to call it from the test
 void velverlet_first_half(mdsys_t *sys)
-
 {
     int i;
     for (i=0; i<sys->natoms; ++i) {
@@ -30,7 +29,32 @@ static void velverlet_second_half(mdsys_t *sys)
 }
 
 
-/* velocity verlet */
+/* velocity verlet: OpenMP version */
+void velverlet_mp(mdsys_t *sys, double *omp_forces)
+{   
+    #ifdef MPIYES
+        /* first part: propagate velocities by half and positions by full step */
+        if (sys->mpirank == 0) {
+            velverlet_first_half(sys);
+        }
+        /* compute forces and potential energy */
+        force(sys);
+        /* second part: propagate velocities by another half step */
+        if (sys->mpirank == 0) {
+            velverlet_second_half(sys);
+        }
+    #else
+        /* first part: propagate velocities by half and positions by full step */
+        velverlet_first_half(sys);
+        /* compute forces and potential energy */
+        force_mp(sys, omp_forces);
+        /* second part: propagate velocities by another half step */
+        velverlet_second_half(sys);
+    #endif
+}
+
+
+/* velocity verlet: no OpenMP version */
 void velverlet(mdsys_t *sys)
 {   
     #ifdef MPIYES

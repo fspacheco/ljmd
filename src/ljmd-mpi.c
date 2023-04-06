@@ -26,9 +26,10 @@ int main(int argc, char **argv)
     sys.mpicomm = MPI_COMM_WORLD;
     MPI_Comm_rank(MPI_COMM_WORLD, &sys.mpirank);
     MPI_Comm_size(MPI_COMM_WORLD, &sys.nsize);
-    // DEBUG: let each process print its rank
-    printf("\n");
-    printf("Rank %d of %d\n", sys.mpirank, sys.nsize);
+    
+    // // DEBUG: let each process print its rank
+    // printf("\n");
+    // printf("Rank %d of %d\n", sys.mpirank, sys.nsize);
 
     
 
@@ -48,15 +49,15 @@ int main(int argc, char **argv)
 
         // NB: kinda useless since this code runs only if MPICH is defined
         #ifdef MPICH
-            printf("MPICH is defined\n");
+            printf("\nMPICH is defined\n");
         #else
-            printf("MPICH is not defined\n");
+            printf("\nMPICH is not defined\n");
         #endif
         #if defined(_OPENMP)
         #pragma omp parallel
         #pragma omp master
             nthreads = omp_get_num_threads();
-            fprintf(stdout, "DBG: main -> %d threads\n", nthreads);
+            fprintf(stdout, "\nDBG: main -> %d threads\n", nthreads);
         #endif
 
         // only master process keeps track of time
@@ -69,8 +70,9 @@ int main(int argc, char **argv)
             return return_value;
         }
 
-        // print info
-        printf("Number of particles: %d   Number of steps: %d  Time step: %f  Print frequency: %d Rest file: %s  Trajectory file: %s  Energy file: %s Box size: %f    Temperature: %f   Cutoff: %f    Mass: %f    Epsilon: %f    Sigma: %f    Number of processes: %d  \n", sys.natoms, sys.nsteps, sys.dt, nprint, restfile, trajfile, ergfile, sys.box, sys.temp, sys.rcut, sys.mass, sys.epsilon, sys.sigma, sys.nsize);
+        // // DEBUG: print info
+        // printf("Number of particles: %d   Number of steps: %d  Time step: %f  Print frequency: %d Rest file: %s  Trajectory file: %s  Energy file: %s Box size: %f    Temperature: %f   Cutoff: %f    Mass: %f    Epsilon: %f    Sigma: %f    Number of processes: %d  \n", sys.natoms, sys.nsteps, sys.dt, nprint, restfile, trajfile, ergfile, sys.box, sys.temp, sys.rcut, sys.mass, sys.epsilon, sys.sigma, sys.nsize);
+
 
         /* allocate memory */
         // NB: other processes are used for forces computations only, 
@@ -84,7 +86,7 @@ int main(int argc, char **argv)
 
     }
 
-    // Broadcast necessary system parameters to all processes (to be reviewed)
+    // Broadcast system parameters to all processes (to be reviewed)
     MPI_Bcast(&sys.natoms, 1, MPI_INT, 0, sys.mpicomm);
     MPI_Bcast(&sys.mass, 1, MPI_DOUBLE, 0, sys.mpicomm);
     MPI_Bcast(&sys.epsilon, 1, MPI_DOUBLE, 0, sys.mpicomm);
@@ -106,7 +108,11 @@ int main(int argc, char **argv)
     sys.fz_mpi=(double *)malloc(sys.natoms*sizeof(double));
 
 
-    /* read restfile */
+    // compute bounds for MPI processes
+    mpi_bounds(&sys);
+    
+
+    /* read restfile: get initial positions */
     if (sys.mpirank == 0) {
         return_value = readrest(&sys, restfile);
         if (return_value != 0) {
@@ -149,7 +155,7 @@ int main(int argc, char **argv)
     /* main MD loop */
     for(sys.nfi=1; sys.nfi <= sys.nsteps; ++sys.nfi) {
 
-        /* master writes output, if requested */
+        /* master writes output */
         if (sys.mpirank == 0) {
             if ((sys.nfi % nprint) == 0)
                 output(&sys, erg, traj);

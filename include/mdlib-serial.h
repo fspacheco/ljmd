@@ -15,6 +15,7 @@ struct _mdsys{
 typedef struct _mdsys mdsys_t;
 
 // compute forces
+void force_mp(mdsys_t *sys, double* omp_forces);
 void force(mdsys_t *sys);
 
 #endif
