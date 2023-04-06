@@ -84,6 +84,8 @@ Allocated 10 cpus
 
 ### The serial version from the same commit, but compiled with -O3
 
+Includes 3rd Newton's law and avoids power and sqrt inside the loop
+
 File omp_md.o9147913
 
 | Num threads     | Time (s) 108atoms | 2916atoms |
@@ -97,4 +99,14 @@ File omp_md.o9147922
 | Num threads     | Time (s) 108atoms | 2916atoms |
 | --------------- | ----------------- | --------- |
 | 1               | 0.331             | 118.622   |
+
+### The serial version (vanilla code), compiled with -O3
+
+Commit 8b4306d392cd5bd9c9261c7395286a5b51869de9
+
+File omp_md.o9148952
+
+| Num threads     | Time (s) 108atoms | 2916atoms |
+| --------------- | ----------------- | --------- |
+| 1               | 3.475             | 121.887   |
 
