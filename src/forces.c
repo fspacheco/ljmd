@@ -16,11 +16,11 @@ static double pbc(double x, const double boxby2)
 /* compute forces */
 void force(mdsys_t *sys)
 {
-    double r,ffac;
+    double ffac;
     double rx,ry,rz;
     int i,j;
     //new variables for the optimization
-    double c12,c6,rcsq, rsq, rm6, rm2;
+    double c12,c6,rcsq;
     /* zero energy and forces */
     sys->epot=0.0;
     azzero(sys->fx,sys->natoms);
@@ -36,14 +36,19 @@ void force(mdsys_t *sys)
 #if defined(_OPENMP)
 #pragma omp parallel default(shared) private(i,j,rx,ry,rz,ffac) 
 	{
-	double *omp_forces;
+	/*double *omp_forces;
 	omp_forces = (double*)malloc(3*sys->natoms*sizeof(double));
 	if (omp_forces == NULL) {
 		fprintf(stderr,"Error allocating memory for omp_forces\n");
 		exit(1);
+	}*/
+#pragma omp master
+	{
+	azzero(sys->omp_forces, 3*sys->natoms*omp_get_num_threads());
 	}
-	azzero(omp_forces, 3*sys->natoms);
-#pragma omp for reduction(+:epot_tmp) nowait
+	int tid = omp_get_thread_num();
+	int start_omp_forces = tid * 3 * sys->natoms;
+#pragma omp for reduction(+:epot_tmp) 
 #endif
     for(i=0; i < (sys->natoms); ++i) {
         for(j=i+1; j < (sys->natoms); ++j) { // The original code was j=0, which means that the force on particle i was computed twice. This is fixed by starting the loop at j=i+1
@@ -64,12 +69,6 @@ void force(mdsys_t *sys)
                 ffac = (12.0*c12*rm6 - 6.0*c6)*rm6*rm2;
                 epot_tmp += rm6*(c12*rm6 - c6); //here it is not necessary to multiply by 0.5, since the force is computed once for each pair of particles
 
-                //ffac = -4.0*sys->epsilon*(-12.0*pow(sys->sigma/r,12.0)/r
-                //                         +6*pow(sys->sigma/r,6.0)/r);
-
-                //sys->epot += 0.5*4.0*sys->epsilon*(pow(sys->sigma/r,12.0)
-                //                               -pow(sys->sigma/r,6.0)); //here it is necessary to multiply by 0.5, since the force is computed twice for each pair of particles
-                
 #if !defined(_OPENMP)
 				//fprintf(stderr, "DBG: should NOT be here with OpenMP\n");
                 sys->fx[i] += rx*ffac; // remove division based on previous changes
@@ -80,24 +79,25 @@ void force(mdsys_t *sys)
                 sys->fy[j] -= ry*ffac;
                 sys->fz[j] -= rz*ffac;
 #else
-				omp_forces[3*i] += rx*ffac;
-				omp_forces[3*i+1] += ry*ffac;
-				omp_forces[3*i+2] += rz*ffac;
-				omp_forces[3*j] -= rx*ffac;
-				omp_forces[3*j+1] -= ry*ffac;
-				omp_forces[3*j+2] -= rz*ffac;
+				sys->omp_forces[start_omp_forces + 3*i] += rx*ffac;
+				sys->omp_forces[start_omp_forces + 3*i+1] += ry*ffac;
+				sys->omp_forces[start_omp_forces + 3*i+2] += rz*ffac;
+				sys->omp_forces[start_omp_forces + 3*j] -= rx*ffac;
+				sys->omp_forces[start_omp_forces + 3*j+1] -= ry*ffac;
+				sys->omp_forces[start_omp_forces + 3*j+2] -= rz*ffac;
 #endif
             }
         } // end for j
     } // end for i
 #if defined(_OPENMP)
+#pragma omp barrier
 #pragma omp critical
 	for (i=0; i<sys->natoms; i++) {
-		sys->fx[i] += omp_forces[3*i];
-		sys->fy[i] += omp_forces[3*i+1];
-		sys->fz[i] += omp_forces[3*i+2];
+			sys->fx[i] += sys->omp_forces[start_omp_forces + 3*i];
+			sys->fy[i] += sys->omp_forces[start_omp_forces + 3*i+1];
+			sys->fz[i] += sys->omp_forces[start_omp_forces + 3*i+2];
 	}
-	free(omp_forces);
+	//free(omp_forces);
 	}
 #endif
 	sys->epot += epot_tmp;

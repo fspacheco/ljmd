@@ -20,8 +20,8 @@ int main(int argc, char **argv)
      
     printf("LJMD version %3.1f\n", LJMD_VERSION);
 
-	int nthreads = 1;
 #ifdef _OPENMP
+	int nthreads = 1;
     if (argc>1) {
         omp_set_num_threads(atoi(argv[1]));
     }
@@ -56,7 +56,12 @@ int main(int argc, char **argv)
     sys.fx=(double *)malloc(sys.natoms*sizeof(double));
     sys.fy=(double *)malloc(sys.natoms*sizeof(double));
     sys.fz=(double *)malloc(sys.natoms*sizeof(double));
-
+#if defined(_OPENMP)
+	sys.omp_forces = (double *)malloc(nthreads * 3 * sys.natoms * sizeof(double));
+	azzero(sys.omp_forces, nthreads * 3 * sys.natoms);
+#else
+	sys.omp_forces = NULL;
+#endif
     /* read restfile */
     return_value = readrest(&sys, restfile);
     if (return_value != 0) {
@@ -108,6 +113,9 @@ int main(int argc, char **argv)
     free(sys.fx);
     free(sys.fy);
     free(sys.fz);
+#if defined(_OPENMP)
+		free(sys.omp_forces);
+#endif
 
     return 0;
 }

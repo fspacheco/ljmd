@@ -20,6 +20,7 @@ struct _mdsys {
     double *rx, *ry, *rz;
     double *vx, *vy, *vz;
     double *fx, *fy, *fz;
+	double *omp_forces;
 };
 typedef struct _mdsys mdsys_t;
 
