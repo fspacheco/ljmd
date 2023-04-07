@@ -20,8 +20,8 @@ int main(int argc, char **argv)
      
     printf("LJMD version %3.1f\n", LJMD_VERSION);
 
-	int nthreads = 1;
 #ifdef _OPENMP
+	int nthreads = 1;
     if (argc>1) {
         omp_set_num_threads(atoi(argv[1]));
     }

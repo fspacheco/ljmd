@@ -16,11 +16,11 @@ static double pbc(double x, const double boxby2)
 /* compute forces */
 void force(mdsys_t *sys)
 {
-    double r,ffac;
+    double ffac;
     double rx,ry,rz;
     int i,j;
     //new variables for the optimization
-    double c12,c6,rcsq, rsq, rm6, rm2;
+    double c12,c6,rcsq;
     /* zero energy and forces */
     sys->epot=0.0;
     azzero(sys->fx,sys->natoms);
