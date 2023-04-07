@@ -56,6 +56,8 @@ Allocated 10 cpus on Ulysses
 | 10              | 0.062             | 11.936    |
 | 20              | 0.129             | 9.595     |
 
-One thing that can be improved is the memory allocation. In the current implementation it is done at each call of the forces function.
+One thing that probably can be improved is the memory allocation. In this implementation it is done at each call of the forces function.
+
+Then, I found out that OpenMP 4.5 has reduction for arrays and tried it in the commit e619b3c025cbb25412dc5d4d9097806913d506d0. The code is much cleaner, but no timing improvements were obtained.
 
 
