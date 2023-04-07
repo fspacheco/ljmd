@@ -33,9 +33,7 @@ void force(mdsys_t *sys)
     rcsq=sys->rcut*sys->rcut; //square of the cutoff radius
 
 	double epot_tmp = 0.0; // gcc does not make reduction directly on sys->epot
-#if defined(_OPENMP)
-#pragma omp parallel default(shared) private(i,j,rx,ry,rz,ffac) 
-	{
+	
 	double *omp_forces;
 	omp_forces = (double*)malloc(3*sys->natoms*sizeof(double));
 	if (omp_forces == NULL) {
@@ -43,7 +41,10 @@ void force(mdsys_t *sys)
 		exit(1);
 	}
 	azzero(omp_forces, 3*sys->natoms);
-#pragma omp for reduction(+:epot_tmp) nowait
+#if defined(_OPENMP)
+#pragma omp parallel default(shared) private(i,j,rx,ry,rz,ffac) 
+	{
+#pragma omp for reduction(+:epot_tmp,omp_forces[:3*sys->natoms]) nowait
 #endif
     for(i=0; i < (sys->natoms); ++i) {
         for(j=i+1; j < (sys->natoms); ++j) { // The original code was j=0, which means that the force on particle i was computed twice. This is fixed by starting the loop at j=i+1
@@ -91,14 +92,20 @@ void force(mdsys_t *sys)
         } // end for j
     } // end for i
 #if defined(_OPENMP)
-#pragma omp critical
+/*#pragma omp critical
 	for (i=0; i<sys->natoms; i++) {
 		sys->fx[i] += omp_forces[3*i];
 		sys->fy[i] += omp_forces[3*i+1];
 		sys->fz[i] += omp_forces[3*i+2];
 	}
-	free(omp_forces);
+	free(omp_forces);*/
 	}
 #endif
 	sys->epot += epot_tmp;
+	for (i=0; i<sys->natoms; i++) {
+		sys->fx[i] = omp_forces[3*i];
+		sys->fy[i] = omp_forces[3*i+1];
+		sys->fz[i] = omp_forces[3*i+2];
+	}
+	free(omp_forces);
 }
