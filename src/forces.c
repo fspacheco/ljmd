@@ -33,10 +33,10 @@ void force(mdsys_t *sys)
     rcsq=sys->rcut*sys->rcut; //square of the cutoff radius
 
 	double epot_tmp = 0.0; // gcc does not make reduction directly on sys->epot
-	double *fx = sys->fx;
+#if defined(_OPENMP)
+	double *fx = sys->fx;  // since version 4.5, openmp supports reduction on arrays
 	double *fy = sys->fy;
 	double *fz = sys->fz;
-#if defined(_OPENMP)
 #pragma omp parallel default(shared) private(i,j,rx,ry,rz,ffac) 
 	{
 #pragma omp for reduction(+:epot_tmp,fx[:sys->natoms],fy[:sys->natoms],fz[:sys->natoms])
@@ -60,12 +60,6 @@ void force(mdsys_t *sys)
                 ffac = (12.0*c12*rm6 - 6.0*c6)*rm6*rm2;
                 epot_tmp += rm6*(c12*rm6 - c6); //here it is not necessary to multiply by 0.5, since the force is computed once for each pair of particles
 
-                //ffac = -4.0*sys->epsilon*(-12.0*pow(sys->sigma/r,12.0)/r
-                //                         +6*pow(sys->sigma/r,6.0)/r);
-
-                //sys->epot += 0.5*4.0*sys->epsilon*(pow(sys->sigma/r,12.0)
-                //                               -pow(sys->sigma/r,6.0)); //here it is necessary to multiply by 0.5, since the force is computed twice for each pair of particles
-                
 #if !defined(_OPENMP)
 				//fprintf(stderr, "DBG: should NOT be here with OpenMP\n");
                 sys->fx[i] += rx*ffac; // remove division based on previous changes
@@ -87,13 +81,6 @@ void force(mdsys_t *sys)
         } // end for j
     } // end for i
 #if defined(_OPENMP)
-/*#pragma omp critical
-	for (i=0; i<sys->natoms; i++) {
-		sys->fx[i] += omp_forces[3*i];
-		sys->fy[i] += omp_forces[3*i+1];
-		sys->fz[i] += omp_forces[3*i+2];
-	}
-	free(omp_forces);*/
 	}
 #endif
 	sys->epot += epot_tmp;
